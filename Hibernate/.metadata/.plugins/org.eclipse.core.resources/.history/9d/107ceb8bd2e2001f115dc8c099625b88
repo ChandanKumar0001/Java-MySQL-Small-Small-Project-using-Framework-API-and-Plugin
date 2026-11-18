@@ -1,0 +1,5 @@
+package com.jsp.hibernate.criteria_builder;
+
+public class App_CriteriaBuilder_Fetch {
+
+}

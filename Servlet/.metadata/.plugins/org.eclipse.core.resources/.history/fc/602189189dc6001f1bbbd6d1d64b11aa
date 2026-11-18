@@ -1,0 +1,16 @@
+package com.jsp.servlet.cardb;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/find-car-by-id")
+public class FindCarByIdServlet extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletRespose resp) throws ServletException, IOException
+	{
+		int carId = Integer.parseInt(req.getParamenter("carID"));
+		
+		//JDBC Logic
+	}
+}

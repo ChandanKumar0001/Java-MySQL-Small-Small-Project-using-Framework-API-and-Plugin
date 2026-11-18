@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="E:\Advance Java\Servlet\ServletProject_JSP\src\main\java\com\jsp\servlet\dispatch\DispatchRequest.java"/>
+			<item value="E:\Advance Java\Servlet\ServletProject_Calculator"/>
+			<item value="E:\Advance Java\Servlet\ServletProject_Calculator\src\main\webapp\index.html"/>
+			<item value="E:\Advance Java\Servlet\ServletProject_DynamicPage"/>
+			<item value="E:\Advance Java\Servlet\ServletProject_StaticPage"/>
+			<item value="E:\Advance Java\Servlet\JDBC_Maven_Example\src\main\java\com\jsp\jdbc\JDBC_Maven_Example\App.java"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="internal"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="com.jsp.servlet.ServletProject_lifecycle"/>
+			<item value="com.jsp.servlet.ServletProject_Example2"/>
+			<item value="com.jsp.servlet.ServletProject_Example1"/>
+			<item value="com.jsp.jdbc.ServletProject_DynamicPage2"/>
+			<item value="com.jsp.jdbc.ServletProject_DynamicPage"/>
+			<item value="com.jsp.jdbc.JDBC_Maven_Example3"/>
+			<item value="com.jsp.jdbc.JDBC_Maven_Example2"/>
+			<item value="com.jsp.jdbc.JDBC_Maven_Example"/>
+		</list>
+		<list key="groupId">
+			<item value="com.jsp.servlet"/>
+			<item value="com.jsp.jdbc"/>
+		</list>
+		<list key="artifactId">
+			<item value="ServletProject_lifecycle"/>
+			<item value="ServletProject_Example2"/>
+			<item value="ServletProject_Example1"/>
+			<item value="ServletProject_DynamicPage2"/>
+			<item value="ServletProject_DynamicPage"/>
+			<item value="JDBC_Maven_Example3"/>
+			<item value="JDBC_Maven_Example2"/>
+			<item value="JDBC_Maven_Example"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

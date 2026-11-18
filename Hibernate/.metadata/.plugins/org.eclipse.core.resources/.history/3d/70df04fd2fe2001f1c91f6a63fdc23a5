@@ -1,0 +1,54 @@
+package com.jsp.hibernate.sql;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.NativeQuery;
+import org.hibernate.query.Query;
+
+import com.jsp.hibernate.hql.Actor;
+
+
+
+public class App 
+{
+	public static void main( String[] args )
+	{
+		Configuration cfg=new Configuration().configure().addAnnotatedClass(Actor.class);
+
+		SessionFactory sf= cfg.buildSessionFactory();
+		Session ss=sf.openSession();
+		Transaction tran=ss.beginTransaction();
+		
+		//Fetch operation
+		
+//		NativeQuery<Actor> nativeQuery=ss.createNativeQuery("SELECT * FROM actor",Actor.class);
+//		List <Actor> actors=nativeQuery.list();
+//		for(Actor actor:actors) {
+//			System.out.println(actor);
+//		}
+		
+		//Update Operation
+		
+		NativeQuery<Actor> nativeQuery = ss.createNativeQuery("UPDATE actor SET age=:age WHERE actorId=:id",Actor.class);
+		nativeQuery.setParameter("age",30);
+		nativeQuery.setParameter("id",101);
+		int rowsUpdated = nativeQuery.executeUpdate();
+		System.out.println(rowsUpdated + "Data Updated!!");
+		
+		
+		//Delete Operation
+		
+//		NativeQuery<Actor> nativeQuery=ss.createNativeQuery("DELETE FROM actor WHERE actoryName=?1",Actor.class);
+//		nativeQuery.setParameter(1,"Salman Khan");
+//		int rowsDeleted=nativeQuery.executeUpdate();
+//		System.out.println(rowsDeleted + "Data Deleted Successfully");
+//		
+		
+		tran.commit();
+		ss.close();
+		sf.close();
+
+	}
+}

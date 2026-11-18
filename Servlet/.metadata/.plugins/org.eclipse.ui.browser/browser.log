@@ -1,0 +1,5 @@
+
+Dec 16, 2024 11:49:53.98 NEW SESSION
+Dec 16, 2024 11:49:54.01 [5524:1172:1216/114953.975:ERROR:smartscreen_dns_resolver.cc(110)] SmartScreenDnsResolver::OnComplete Error: -106 DidTimeOut: 0 URL: https://www.msn.com/en-gb/cars/news/electric-car-crisis-sparks-calls-to-dismantle-frankenstein-vauxhall-owner/ar-AA1vaxFi?ocid=winp2fptaskbarhover&cvid=c78709ba6ed64bad85216949c1ea36cf&ei=7
+Dec 16, 2024 11:50:05.52 [5524:1172:1216/115005.526:ERROR:about_handler.cc(1514)] We are empty.
+Dec 16, 2024 11:50:06.94 [5524:1172:1216/115006.944:ERROR:smartscreen_dns_resolver.cc(110)] SmartScreenDnsResolver::OnComplete Error: -106 DidTimeOut: 0 URL: https://ntp.msn.com/edge/ntp?locale=en-GB&title=New%20tab&dsp=1&sp=Bing&PC=U531

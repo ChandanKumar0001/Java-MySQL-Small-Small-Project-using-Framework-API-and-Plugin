@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.jsp.springboot.demo.entity.Movie"/>
+    <fullyQualifiedTypeName name="com.jsp.springboot.demo.controller.MovieController"/>
+    <fullyQualifiedTypeName name="com.jsp.springboot.ems.utilitiy.ResponseStructure"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+</qualifiedTypeNameHistroy>

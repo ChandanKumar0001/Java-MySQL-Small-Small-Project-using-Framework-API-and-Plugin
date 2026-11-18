@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="E:\Advance Java\Hibernate\Hibernate_ManyToOne\src\main\java\com\jsp\hibernate\ManyToOne\App.java"/>
+			<item value="E:\Advance Java\Hibernate\Hibernate_OneToMany\src\main\java\com\jsp\hibernate\onetomany\App.java"/>
+			<item value="E:\Advance Java\Hibernate\HibernateProduct_demo"/>
+			<item value="E:\Advance Java\Hibernate\HibernateExample1_demo"/>
+			<item value="E:\Advance Java\Hibernate\HibernateProduct_demo\src\main\java\com\jsp\hibernate\HibernateProduct_demo\App.java"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="internal"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="com.jsp.hibernate.project_actor_movies"/>
+			<item value="com.jsp.hibernate.example1"/>
+			<item value="com.jsp.hibernate.fetchedby"/>
+			<item value="com.jsp.hibernate.Example1"/>
+			<item value="com.jsp.hibernate.ManyToOne"/>
+			<item value="com.jsp.hibernate.onetoone"/>
+			<item value="com.jsp.hibernate.employeedb"/>
+			<item value="com.jsp.hibernate.employeedb1"/>
+			<item value="com.jsp.hibernate.HibernateExample2_demo"/>
+			<item value="com.jsp.hibernate.HibernetExample1_demo"/>
+			<item value="com.jsp.hibernate.HibernateProduct_demo"/>
+		</list>
+		<list key="groupId">
+			<item value="com.jsp.hibernate"/>
+		</list>
+		<list key="artifactId">
+			<item value="HibernateProject_Actor-movies"/>
+			<item value="Example1"/>
+			<item value="Hibernate_FetchedBy"/>
+			<item value="Hibernate_ManyToOne"/>
+			<item value="Hibernate_OneToOne"/>
+			<item value="HibernateProject_EmployeeDB"/>
+			<item value="HibernateExample2_demo"/>
+			<item value="HibernetExample1_demo"/>
+			<item value="HibernateProduct_demo"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

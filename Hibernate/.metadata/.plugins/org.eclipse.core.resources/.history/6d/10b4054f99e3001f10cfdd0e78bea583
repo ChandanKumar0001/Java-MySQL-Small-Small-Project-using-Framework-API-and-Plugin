@@ -1,0 +1,42 @@
+package com.jsp.hibernate.criteria_builder;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaDelete;
+import javax.persistence.criteria.Root;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+
+import com.jsp.hibernate.entity.Actor;
+
+public class App_CriteriaBuilder_Delete {
+	
+	public static void main(String[] args) {
+
+		Configuration cfg=new Configuration().configure().addAnnotatedClass(Actor.class);
+
+		SessionFactory sf= cfg.buildSessionFactory();
+		Session ss=sf.openSession();
+		Transaction tran=ss.beginTransaction();
+
+		//Builder
+		CriteriaBuilder cb = ss.getCriteriaBuilder();
+
+		//Delete Query Construction
+		CriteriaDelete<Actor> cd = cb.createCriteriaDelete(Actor.class);
+		Root<Actor> root = cd.from(Actor.class);
+		cd.where(cb.equal(root.get("age"),85));
+
+		//Query Execution
+		Query<Actor> query = ss.createQuery(cd);
+		int rowsDeleted = query.executeUpdate();
+		System.out.println(rowsDeleted+"data Deleted!!");
+		
+		tran.commit();
+		ss.close();
+		sf.close();
+	}
+}

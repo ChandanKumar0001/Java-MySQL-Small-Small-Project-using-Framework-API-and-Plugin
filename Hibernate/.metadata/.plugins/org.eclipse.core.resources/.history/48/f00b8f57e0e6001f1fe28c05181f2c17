@@ -1,0 +1,252 @@
+package com.jsp.hibernate.actor_movies.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
+import com.jsp.hibernate.actor_movies.entity.Actor;
+import com.jsp.hibernate.actor_movies.entity.Movie;
+
+public class ActorDao {
+
+	Scanner scanner = new Scanner(System.in);
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysql-config");
+
+	public void addActor() {
+
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tran = em.getTransaction();
+		tran.begin();
+
+		System.out.println("enter the new actor id");
+		Actor actor = new Actor();
+		int id = scanner.nextInt();
+		actor.setActorId(id);
+
+		System.out.println("enter actor name");
+		actor.setActorName(scanner.next());
+
+		System.out.println("enter age");
+		actor.setAge(scanner.nextInt());
+
+		System.out.println("enter salary");
+		actor.setSalary(scanner.nextInt());
+
+		System.out.println("enter industry");
+		actor.setIndustry(scanner.next());
+
+		System.out.println("enetr nationality");
+		actor.setNationality(scanner.next());
+
+		em.persist(actor);
+		if (em.find(Actor.class, id) == null) {
+			System.err.println("data was not entered");
+		} else {
+			System.out.println("data was added");
+		}
+		tran.commit();
+		em.close();
+	}
+
+	public void findActorById() {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tran = em.getTransaction();
+		tran.begin();
+
+		System.out.println("enter actor id to fetch");
+		Actor actor = em.find(Actor.class, scanner.nextInt());
+
+		if (actor == null) {
+			System.err.println("no such actor found");
+		} else {
+			System.out.println(actor);
+			System.out.println("-------------------------------------------------");
+		}
+		em.close();
+	}
+
+	public void findAllActorsByName() {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tran = em.getTransaction();
+		tran.begin();
+
+		System.out.println("enter actor name");
+		String name = scanner.next();
+
+		Query query = em.createQuery("select a from Actor a where a.actorName=:name");
+		query.setParameter("name", name);
+
+		List<Actor> actors = query.getResultList();
+		if (actors == null) {
+			System.err.println("no actors found");
+		} else {
+			for (Actor actor : actors) {
+				System.out.println(actor);
+			}
+		}
+		tran.commit();
+		em.close();
+	}
+
+	public void findAllActorsByIndustry() {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tran = em.getTransaction();
+		tran.begin();
+
+		System.out.println("enter industry name");
+		String name = scanner.next();
+
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Actor> cq = cb.createQuery(Actor.class);
+		Root<Actor> root = cq.from(Actor.class);
+		cq.select(root);
+		cq.where(cb.equal(root.get("industry"), name));
+		Query query = em.createQuery(cq);
+		List<Actor> actors = query.getResultList();
+
+		if (actors == null) {
+			System.err.println("no actors found");
+		} else {
+			for (Actor actor : actors) {
+				System.out.println(actor);
+			}
+		}
+		tran.commit();
+		em.close();
+	}
+
+	public void findAllActorsBetweenAge() {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tran = em.getTransaction();
+		tran.begin();
+
+		System.out.println("Enter the range of age");
+		int a = scanner.nextInt();
+		int b = scanner.nextInt();
+
+		Query query = em.createQuery("select a from Actor a where a.age between :a and :b");
+		query.setParameter("a", a);
+		query.setParameter("b", b);
+		List<Actor> actors = query.getResultList();
+
+		if (actors == null) {
+			System.err.println("no actors found");
+		} else {
+			for (Actor actor : actors) {
+				System.out.println(actor);
+			}
+		}
+		tran.commit();
+		em.close();
+	}
+
+	public void findAllActorsByMovieId() {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tran = em.getTransaction();
+		tran.begin();
+
+		System.out.println("enter movie id");
+		Query query = em.createQuery("select m from Movie m where m.movieId= :id");
+		query.setParameter("id", scanner.nextInt());
+		Movie movie = (Movie) query.getSingleResult();
+
+		List<Actor> actors = movie.getActors();
+		for (Actor actor : actors) {
+			System.out.println(actor);
+		}
+
+		tran.commit();
+		em.close();
+	}
+
+	public void updateAllActorsSalaryByMovieId() {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tran = em.getTransaction();
+		tran.begin();
+
+		System.out.println("enter movie id");
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Movie> cq = cb.createQuery(Movie.class);
+		Root<Movie> root = cq.from(Movie.class);
+		cq.where(cb.equal(root.get("movieId"), scanner.nextInt()));
+
+		Query query = em.createQuery(cq);
+		Movie movie = (Movie) query.getSingleResult();
+		List<Actor> actors = movie.getActors();
+
+		if (actors == null) {
+			System.err.println("no actors found");
+		} else {
+			for (Actor actor : actors) {
+				actor.setSalary(actor.getSalary() + 5000000);
+			}
+			System.out.println("salaries are updated");
+		}
+		tran.commit();
+		em.close();
+	}
+
+	public void deleteAllActorsWithSalaryGreaterThan() {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tran = em.getTransaction();
+		tran.begin();
+
+		System.out.println("Enter the salary");
+
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Actor> cq = cb.createQuery(Actor.class);
+		Root<Actor> root = cq.from(Actor.class);
+		cq.where(cb.gt(root.get("salary"), scanner.nextInt()));
+
+		Query query = em.createQuery(cq);
+		List<Actor> actors = query.getResultList();
+
+		if (actors == null) {
+			System.err.println("no actors found");
+		} else {
+			for (Actor actor : actors) {
+				em.remove(actor);
+			}
+			System.out.println("actors are deleted");
+		}
+		tran.commit();
+		em.close();
+	}
+
+	public void deleteAllActorsByMovieGenre() {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tran = em.getTransaction();
+		tran.begin();
+
+		System.out.println("enter movie genre");
+		Query query = em.createQuery("select m from Movie m where m.genre= :name");
+		query.setParameter("name", scanner.next());
+		Movie movie = (Movie) query.getSingleResult();
+
+		List<Actor> actors = movie.getActors();
+		List<Actor> actorstemp = new ArrayList<Actor>(movie.getActors());
+		if (actors == null || actors.isEmpty()) {
+			System.err.println("no actos found");
+		} else {
+			actors.clear();
+
+			for (Actor actor : actorstemp) {
+				em.remove(actor);
+			}
+			System.out.println("actors are deleted");
+		}
+
+		movie.setActors(actors);
+		tran.commit();
+		em.close();
+	}
+}

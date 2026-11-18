@@ -1,0 +1,25 @@
+package com.jsp.servlet.cardb;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+
+public class DisplayAllCarsServlet extends HttpServlet{
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,IOException
+	{
+		connection conn = null;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet_cardb?user=root&password=Chandan1a@");
+			
+			PrepareStatement pst = conn.prepareStatement("SELECT * FROM car");
+			
+			ResultSet rs = pst.excuteQuery();
+			
+			req.setAttribute("resultSet", rs);
+			RequestDispatcher rd = req.getRequestDispatcher("DisplayAllCars.jsp");
+		}
+	}
+}

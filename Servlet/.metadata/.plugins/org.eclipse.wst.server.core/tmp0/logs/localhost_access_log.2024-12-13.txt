@@ -1,0 +1,14 @@
+127.0.0.1 - - [13/Dec/2024:12:00:53 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [13/Dec/2024:12:00:55 +0530] "GET /ServletProject_StaticPage/index.html HTTP/1.1" 200 150
+0:0:0:0:0:0:0:1 - - [13/Dec/2024:12:00:56 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [13/Dec/2024:12:06:38 +0530] "GET /ServletProject_StaticPage/ HTTP/1.1" 200 150
+0:0:0:0:0:0:0:1 - - [13/Dec/2024:12:10:25 +0530] "GET /ServletProject_StaticPage/ HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Dec/2024:12:12:11 +0530] "GET /ServletProject_StaticPage/ HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Dec/2024:12:35:51 +0530] "GET /ServletProject_StaticPage/index.html HTTP/1.1" 200 2679
+0:0:0:0:0:0:0:1 - - [13/Dec/2024:12:35:51 +0530] "GET /ServletProject_StaticPage/style.css HTTP/1.1" 404 790
+0:0:0:0:0:0:0:1 - - [13/Dec/2024:12:37:06 +0530] "GET /ServletProject_StaticPage/index.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Dec/2024:12:37:06 +0530] "GET /ServletProject_StaticPage/style.css HTTP/1.1" 200 867
+127.0.0.1 - - [13/Dec/2024:14:04:39 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [13/Dec/2024:14:04:40 +0530] "GET /ServletProject_StaticPage/index.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Dec/2024:14:04:40 +0530] "GET /ServletProject_StaticPage/style.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [13/Dec/2024:14:04:41 +0530] "GET /favicon.ico HTTP/1.1" 404 762

@@ -1,0 +1,67 @@
+package com.jsp.hibernate.hql;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+
+import com.jsp.hibernate.entity.Actor;
+
+
+
+public class App 
+{
+	public static void main( String[] args )
+	{
+		Configuration cfg=new Configuration().configure().addAnnotatedClass(Actor.class);
+
+		SessionFactory sf= cfg.buildSessionFactory();
+		Session ss=sf.openSession();
+		Transaction tran=ss.beginTransaction();
+		
+		//Select all details and print in console from database
+		
+//		Query<Actor> query=ss.createQuery("from Actor");
+//		List <Actor> actors=query.list();
+//		for(Actor actor:actors) {
+//			System.out.println(actor);
+//		}
+		
+		//Fetch operation
+		
+//		Query<Actor> query=ss.createQuery("from Actor");
+//		List <Actor> actors=query.list();
+//		for(Actor actor:actors) {
+//			System.out.println(actor.getActoryName());
+//		}
+
+		// Update Operation
+		
+//		Query<Actor> query=ss.createQuery("UPDATE Actor a SET a.age=90 WHERE a.actorId=103");
+//		int rowsUpdated=query.executeUpdate();
+//		System.out.println(rowsUpdated + "Data Updated Successfully");
+		
+		// Update Operation (2nd way using setParameters)
+		
+//		Query<Actor> query=ss.createQuery("UPDATE Actor a SET a.age=?1 WHERE a.actorId=:id");
+//		query.setParameter(1,65);
+//		query.setParameter("id", 102);
+//		int rowsUpdated=query.executeUpdate();
+//		System.out.println(rowsUpdated + "Data Updated Successfully");
+		
+		
+		// Delete Operation
+		
+		Query<Actor> query=ss.createQuery("DELETE Actor a WHERE a.actorId=103");
+		int rowsDeleted=query.executeUpdate();
+		System.out.println(rowsDeleted + "Data Deleted Successfully");
+		
+		tran.commit();
+		ss.close();
+		sf.close();
+
+	}
+}

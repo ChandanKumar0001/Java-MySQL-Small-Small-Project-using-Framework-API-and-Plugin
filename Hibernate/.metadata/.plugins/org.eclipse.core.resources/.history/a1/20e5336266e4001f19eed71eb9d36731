@@ -1,0 +1,9 @@
+package com.jsp.hibernate.jpa;
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        
+    }
+}
